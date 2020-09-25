@@ -1,0 +1,24 @@
+
+.img-rounded, .btn, .label {border-radius: 6px;}
+.btn {padding: 6px 18px;
+      margin-right: 5px;}
+.btn-group {
+      padding-left: 5px;
+      padding-right: 5px;
+}
+.origami-item {
+      background: white;
+}
+.origami-item-info {
+      padding-bottom: 12px;
+}
+
+.react-rater {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+}
+
+/*.bottom {*/
+/*      position: absolute;*/
+/*      bottom : 0;*/
+/*}*/

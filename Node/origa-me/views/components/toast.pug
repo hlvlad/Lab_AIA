@@ -1,0 +1,8 @@
+div(id="message-container" style={"position":"absolute", top: 0, right: 0})
+  each message in messages
+    div(class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1000")
+      .toast-header
+        strong.mr-auto #{message.type}
+        button(type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close")
+          span(aria-hidden="true") &times;
+      .toast-body #{message.message}

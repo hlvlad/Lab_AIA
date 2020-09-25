@@ -1,0 +1,11 @@
+#message
+  div(style={padding : '5px'})
+    div(id='inner-message' class="alert alert-"+message.type+" alert-dismissible fade show" role="alert")
+      case message.type
+        when 'success'
+          strong Success!
+        when 'warning'
+          strong Warning!
+        when 'danger'
+          strong Error!
+      span.ml-1 #{message.message}

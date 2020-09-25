@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "title": "Ryujin Dragon",
+    "description": "Beautiful origami model",
+    "image": "images/ryujin-dragon.jpg",
+    "rating": 4
+  },
+  {
+    "id": 1,
+    "title": "Unicorn",
+    "description": "Amazing origami model",
+    "image": "images/unicorn.jpg",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "title": "Cat",
+    "description": "Astonishing origami model",
+    "image": "images/cat.jpg",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "title": "Red Dragon",
+    "description": "Breathtaking origami model",
+    "image": "images/red-dragon.jpg",
+    "rating": 5
+  }
+]

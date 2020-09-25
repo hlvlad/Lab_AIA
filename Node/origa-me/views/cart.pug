@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  div.pt-3.container
+    h1 Shopping cart
+    if cart && cart.length
+      table.table
+        thead
+          tr
+            th(scope="col") #
+            th(scope="col") Title
+            th(scope="col") Description
+            th(scope="col") Actions
+        tbody
+          each item, index in cart
+            tr
+              th(scope="row") #{index+1}
+              td #{item.name}
+              td(width="100%") #{item.description}
+              td(align="right")
+                button(type="button" class="btn btn-danger" onclick="removeFromCart('"+item._id+"')" style={"white-space":"nowrap"}) Remove from cart
+      .d-flex.justify-content-end
+        button(type="button" class="btn btn-danger mr-3" onclick="clearCart()") Clear cart
+        button(type="button" class="btn btn-warning" onclick="checkoutCart()") Order
+    else
+      .d-flex.justify-content-center
+        p No item in the cart yet.

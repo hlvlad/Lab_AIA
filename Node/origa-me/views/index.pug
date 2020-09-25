@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div.pt-3.container
+    div.row-cols-1.row-cols-md-3.row-cols-lg-4.row
+      each item in items
+        div.mb-4.d-flex.align-items-stretch.col
+          div.card
+            img(src=item.image class='card-img-top img-responsive')
+            div.card-body
+              div.card-title.h5= item.name
+              p.card-text= item.description
+            div.d-flex.justify-content-end.card-footer
+              case item.status
+                when 'available'
+                  button(id='btn-'+item._id type='button' class='btn btn-warning' onclick="addToCart('"+item._id+"')")= 'Add to cart'
+                when 'not-available'
+                  button(type='button' class='btn btn-gray' disabled)= 'Out of stock'
+                when 'in-cart'
+                  button(type='button' class='btn btn-success' disabled)= 'In cart'
+                default
+                  button(type='button' class='btn btn-gray disabled')= 'Out of stock'
+    a(href='./cart' class='btn btn-fab btn-warning') Go to Shopping cart
+    a(class='btn btn-reset btn-danger' onclick='resetApp()') Reset App

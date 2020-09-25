@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TestPromise</title>
+    <script src="promise.js"></script>
+    <script type="text/javascript">
+        const create_post = (post) => {
+            return '<li><h3>'+post.title+'</h3><p>'+post.body+'</p></li>'
+        }
+        const build_list = (post_arr) => {
+            return '<ul>'+post_arr.map(post => {
+                return create_post(post);
+            }).join(' ')+'</ul>';
+        }
+        const test_promise = () =>
+        {
+            let url = document.getElementById("url-input").value;
+            url = url || 'https://jsonplaceholder.typicode.com/posts/'
+            get_request(url).then(response => {
+                let json = JSON.parse(response);
+                let html = Array.isArray(json) ? build_list(json) : build_list([json]);
+                document.body.innerHTML += html;
+            }).catch(error => {
+                console.log("Error occurred when fetching data: ", error);
+            });
+        }
+    </script>
+</head>
+<body>
+<label for="url-input">URL:</label>
+<input id="url-input"/>
+<button id="get-data-btn" onclick="test_promise()">Get data</button>
+</body>
+</html>
